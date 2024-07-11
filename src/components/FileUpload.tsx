@@ -1,7 +1,6 @@
 import { updateSearchParameters } from "@/lib/utils";
 import { promises as fs } from "fs";
 import { headers } from "next/headers";
-import { permanentRedirect } from "next/navigation";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
@@ -21,12 +20,7 @@ export default function FileUpload() {
         Buffer.from(data)
       );
       const search = JSON.stringify(referer)?.split("?")[1];
-      updateSearchParameters(
-        "fileUpload",
-        "success",
-        search,
-        permanentRedirect
-      );
+      updateSearchParameters("fileUpload", "success", search);
     } catch (error) {
       //   updateSearchParameters(referer, "fileUpload", "error");
     }

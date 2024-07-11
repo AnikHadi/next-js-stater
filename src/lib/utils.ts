@@ -8,13 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 type key = string;
 type value = string | "";
 
-export const updateSearchParameters = (
-  key: key,
-  value: value,
-  search: any,
-  permanentRedirect: any
-) => {
-  // const newSearchParams = new URLSearchParams(window.location.search);
+export const updateSearchParameters = (key: key, value: value, search: any) => {
   const newSearchParams = search
     ? new URLSearchParams(search)
     : new URLSearchParams();
@@ -26,5 +20,4 @@ export const updateSearchParameters = (
   }
   // window.history.replaceState(null, "", `?${newSearchParams.toString()}`);
   console.log("url", newSearchParams);
-  return permanentRedirect("/hello");
 };

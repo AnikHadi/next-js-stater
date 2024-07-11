@@ -20,7 +20,7 @@ export default function Home({ params, searchParams }: HomeProps) {
           </p>
         </div>
 
-        <FileUpload searchParams={searchParams} />
+        <FileUpload />
         <AlertMessage
           title="Success"
           message="Successfully uploaded this file."
